@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nusantara Pastry</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+    .heading, .section-title {
+      font-family: 'Playfair Display', serif;
+    }
+    .gold-text {
+      color: #c7a76c;
+    }
+  </style>
+</head>
+<body class="bg-white text-black">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-6 md:px-16 py-6 bg-white shadow-sm fixed w-full z-50">
+    <a href="index.html" class="text-2xl font-bold heading gold-text">Nusantara Pastry</a>
+    <nav class="space-x-6 text-lg">
+      <a href="#" class="hover:text-[#c7a76c] transition">About us</a>
+      <a href="https://yourmarketplace.link" target="_blank" class="bg-[#c7a76c] text-white px-5 py-2 rounded-full hover:bg-[#b8955c] transition">Order now</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative flex flex-col items-center justify-center text-center px-6 md:px-16 pt-40 pb-20 bg-cover bg-center" style="background-image: url('gambar1.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="relative z-10 max-w-3xl" data-aos="fade-up">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 heading text-white">Handcrafted Joy,<br> <span class="gold-text">One Bite at a Time</span></h1>
+      <p class="text-lg text-gray-200">Indulge in delicate, buttery pastries made with premium ingredients and timeless French techniques.</p>
+      <a href="https://yourmarketplace.link" target="_blank" class="inline-block mt-8 bg-[#c7a76c] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#b8955c] transition">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Best Products -->
+  <section class="px-6 md:px-16 py-20 bg-gray-50">
+    <h2 class="text-3xl font-bold mb-12 section-title text-center gold-text" data-aos="fade-up">Best Products</h2>
+    <div class="grid md:grid-cols-3 gap-12">
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition" data-aos="fade-up" data-aos-delay="100">
+        <img src="gambar2.jpg" alt="Hazelnut Financier" class="w-full h-[300px] object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Hazelnut Financier</h3>
+          <p class="text-gray-600">Crisp edges, moist center, with roasted hazelnut richness.</p>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition" data-aos="fade-up" data-aos-delay="200">
+        <img src="gambar3.jpg" alt="Vanilla Sablé Breton" class="w-full h-[300px] object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Vanilla Sablé Breton</h3>
+          <p class="text-gray-600">Buttery shortbread with Tahitian vanilla bean specks.</p>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition" data-aos="fade-up" data-aos-delay="300">
+        <img src="gambar4.jpg" alt="Salted Caramel Éclair" class="w-full h-[300px] object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Salted Caramel Éclair</h3>
+          <p class="text-gray-600">Silky caramel filling, dark chocolate glaze, fleur de sel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="px-6 md:px-16 py-20 grid md:grid-cols-2 gap-12 items-center">
+    <div data-aos="fade-right">
+      <h2 class="text-3xl font-bold mb-8 heading gold-text">Why Choose Us?</h2>
+      <ul class="space-y-6 text-gray-700 text-base">
+        <li><strong class="gold-text">100% Artisan Crafted</strong><br>Each batch is handmade in small quantities for perfection.</li>
+        <li><strong class="gold-text">Premium Ingredients</strong><br>French butter, organic eggs, and single-origin chocolate.</li>
+        <li><strong class="gold-text">Freshness Guaranteed</strong><br>Baked daily, delivered or picked up same-day.</li>
+      </ul>
+      <a href="https://yourmarketplace.link" target="_blank" class="inline-block mt-8 bg-[#c7a76c] text-white px-6 py-3 rounded-full text-base hover:bg-[#b8955c] transition">Order for Today</a>
+    </div>
+    <div data-aos="fade-left">
+      <img src="gambar5.jpg" alt="Produk 5" class="w-full max-w-[500px] object-cover rounded-xl shadow-lg mx-auto" />
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="px-6 md:px-16 py-20 bg-gray-50">
+    <h2 class="text-3xl font-bold mb-10 section-title text-center gold-text" data-aos="fade-up">What People Say</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+        <p class="italic text-base">"The financier is pure magic—crispy outside, melt-in-your-mouth inside."</p>
+        <div class="flex items-center mt-6 space-x-3">
+          <img src="customer1.jpg" class="w-10 h-10 rounded-full object-cover">
+          <div>
+            <p class="text-sm font-semibold">Sarah L.</p>
+            <p class="text-xs text-gray-500">Pastry Lover</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <p class="italic text-base">"I've never tasted a better éclair. The caramel is divine!"</p>
+        <div class="flex items-center mt-6 space-x-3">
+          <img src="customer2.jpg" class="w-10 h-10 rounded-full object-cover">
+          <div>
+            <p class="text-sm font-semibold">James P.</p>
+            <p class="text-xs text-gray-500">Food Blogger</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        <p class="italic text-base">"Like biting into a Parisian patisserie. Worth every calorie."</p>
+        <div class="flex items-center mt-6 space-x-3">
+          <img src="customer3.jpg" class="w-10 h-10 rounded-full object-cover">
+          <div>
+            <p class="text-sm font-semibold">Amelia W.</p>
+            <p class="text-xs text-gray-500">Gourmet Enthusiast</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="px-6 md:px-16 py-12 bg-black text-gray-300">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div>
+        <p class="font-semibold text-white text-lg">Nusantara Pastry</p>
+        <p class="text-sm mt-1">© 2025 All Rights Reserved.</p>
+      </div>
+      <div class="flex space-x-4 text-xl">
+        <a href="#"><span>🌐</span></a>
+        <a href="#"><span>📧</span></a>
+        <a href="#"><span>📞</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>
