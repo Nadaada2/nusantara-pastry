@@ -21,19 +21,51 @@
     }
   </style>
 </head>
-<body class="bg-white text-black">
+<body class="bg-white text-black pt-24">
 
   <!-- Navbar -->
-  <header class="flex justify-between items-center px-6 md:px-16 py-6 bg-white shadow-sm fixed w-full z-50">
-    <a href="index.html" class="text-2xl font-bold heading gold-text">Nusantara Pastry</a>
-    <nav class="space-x-6 text-lg">
-      <a href="#" class="hover:text-[#c7a76c] transition">About us</a>
-      <a href="https://yourmarketplace.link" target="_blank" class="bg-[#c7a76c] text-white px-5 py-2 rounded-full hover:bg-[#b8955c] transition">Order now</a>
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 flex-shrink-0">
+        <span class="text-lg md:text-2xl font-bold heading gold-text whitespace-nowrap">Nusantara Pastry</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center space-x-6 text-base">
+        <a href="#about" class="text-gray-700 hover:text-[#c7a76c] transition">About us</a>
+        <a href="https://yourmarketplace.link" target="_blank"
+           class="bg-[#c7a76c] text-white px-4 py-2 rounded-full hover:bg-[#b8955c] transition">Order now</a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu"
+                class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#c7a76c]">
+          <!-- hamburger icon -->
+          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
+               stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <!-- close icon -->
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
+               stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 hidden" aria-hidden="true">
+      <div class="px-6 py-4 space-y-3">
+        <a href="#about" class="block text-gray-700">About us</a>
+        <a href="https://yourmarketplace.link" target="_blank"
+           class="block bg-[#c7a76c] text-white px-4 py-2 rounded-full text-center">Order now</a>
+      </div>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="relative flex flex-col items-center justify-center text-center px-6 md:px-16 pt-40 pb-20 bg-cover bg-center" style="background-image: url('gambar1.jpg');">
+  <section class="relative flex flex-col items-center justify-center text-center px-6 md:px-16 pt-20 pb-20 bg-cover bg-center" style="background-image: url('gambar1.jpg');">
     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
     <div class="relative z-10 max-w-3xl" data-aos="fade-up">
       <h1 class="text-4xl md:text-6xl font-bold mb-6 heading text-white">Handcrafted Joy,<br> <span class="gold-text">One Bite at a Time</span></h1>
@@ -71,7 +103,7 @@
   </section>
 
   <!-- Why Choose Us -->
-  <section class="px-6 md:px-16 py-20 grid md:grid-cols-2 gap-12 items-center">
+  <section id="about" class="px-6 md:px-16 py-20 grid md:grid-cols-2 gap-12 items-center">
     <div data-aos="fade-right">
       <h2 class="text-3xl font-bold mb-8 heading gold-text">Why Choose Us?</h2>
       <ul class="space-y-6 text-gray-700 text-base">
@@ -138,6 +170,33 @@
     </div>
   </footer>
 
+  <!-- Mobile menu toggle -->
+  <script>
+    (function () {
+      const btn = document.getElementById('nav-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('icon-open');
+      const iconClose = document.getElementById('icon-close');
+
+      btn.addEventListener('click', () => {
+        const isHidden = menu.classList.contains('hidden');
+        if (isHidden) {
+          menu.classList.remove('hidden');
+          menu.setAttribute('aria-hidden', 'false');
+          btn.setAttribute('aria-expanded', 'true');
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+        } else {
+          menu.classList.add('hidden');
+          menu.setAttribute('aria-hidden', 'true');
+          btn.setAttribute('aria-expanded', 'false');
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        }
+      });
+    })();
+  </script>
+
   <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -148,4 +207,3 @@
   </script>
 </body>
 </html>
-
