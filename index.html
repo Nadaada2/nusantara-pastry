@@ -12,12 +12,34 @@
   <style>
     body {
       font-family: 'Lato', sans-serif;
+      overflow-x: hidden;
     }
     .heading, .section-title {
       font-family: 'Playfair Display', serif;
     }
     .gold-text {
       color: #c7a76c;
+    }
+    /* Hero Parallax Effect */
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    /* Product Hover Effect with Image Zoom */
+    .product-card {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      overflow: hidden;
+    }
+    .product-card img {
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .product-card:hover img {
+      transform: scale(1.08);
     }
   </style>
 </head>
@@ -26,35 +48,26 @@
   <!-- Navbar -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
     <div class="max-w-7xl mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
-      <!-- Logo -->
       <a href="/" class="flex items-center gap-3 flex-shrink-0">
         <span class="text-lg md:text-2xl font-bold heading gold-text whitespace-nowrap">Nusantara Pastry</span>
       </a>
-
-      <!-- Desktop nav -->
       <nav class="hidden md:flex items-center space-x-6 text-base">
         <a href="#about" class="text-gray-700 hover:text-[#c7a76c] transition">About us</a>
         <a href="https://yourmarketplace.link" target="_blank"
            class="bg-[#c7a76c] text-white px-4 py-2 rounded-full hover:bg-[#b8955c] transition">Order now</a>
       </nav>
-
-      <!-- Mobile menu button -->
       <div class="md:hidden">
         <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu"
                 class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#c7a76c]">
-          <!-- hamburger icon -->
           <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
                stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          <!-- close icon -->
           <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
                stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
       </div>
     </div>
-
-    <!-- Mobile menu -->
     <nav id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 hidden" aria-hidden="true">
       <div class="px-6 py-4 space-y-3">
         <a href="#about" class="block text-gray-700">About us</a>
@@ -65,9 +78,9 @@
   </header>
 
   <!-- Hero -->
-  <section class="relative flex flex-col items-center justify-center text-center px-6 md:px-16 pt-20 pb-20 bg-cover bg-center" style="background-image: url('gambar1.jpg');">
+  <section class="relative flex flex-col items-center justify-center text-center px-6 md:px-16 pt-20 pb-20 parallax" style="background-image: url('gambar1.jpg');">
     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-    <div class="relative z-10 max-w-3xl" data-aos="fade-up">
+    <div class="relative z-10 max-w-3xl" data-aos="fade-up" data-aos-easing="ease-out-cubic">
       <h1 class="text-4xl md:text-6xl font-bold mb-6 heading text-white">Handcrafted Joy,<br> <span class="gold-text">One Bite at a Time</span></h1>
       <p class="text-lg text-gray-200">Indulge in delicate, buttery pastries made with premium ingredients and timeless French techniques.</p>
       <a href="https://yourmarketplace.link" target="_blank" class="inline-block mt-8 bg-[#c7a76c] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#b8955c] transition">Shop Now</a>
@@ -78,21 +91,21 @@
   <section class="px-6 md:px-16 py-20 bg-gray-50">
     <h2 class="text-3xl font-bold mb-12 section-title text-center gold-text" data-aos="fade-up">Best Products</h2>
     <div class="grid md:grid-cols-3 gap-12">
-      <div class="bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition" data-aos="fade-up" data-aos-delay="100">
+      <div class="bg-white rounded-xl product-card" data-aos="zoom-in" data-aos-delay="100">
         <img src="gambar2.jpg" alt="Hazelnut Financier" class="w-full h-[300px] object-cover">
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">Hazelnut Financier</h3>
           <p class="text-gray-600">Crisp edges, moist center, with roasted hazelnut richness.</p>
         </div>
       </div>
-      <div class="bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition" data-aos="fade-up" data-aos-delay="200">
+      <div class="bg-white rounded-xl product-card" data-aos="zoom-in" data-aos-delay="200">
         <img src="gambar3.jpg" alt="Vanilla Sablé Breton" class="w-full h-[300px] object-cover">
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">Vanilla Sablé Breton</h3>
           <p class="text-gray-600">Buttery shortbread with Tahitian vanilla bean specks.</p>
         </div>
       </div>
-      <div class="bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition" data-aos="fade-up" data-aos-delay="300">
+      <div class="bg-white rounded-xl product-card" data-aos="zoom-in" data-aos-delay="300">
         <img src="gambar4.jpg" alt="Salted Caramel Éclair" class="w-full h-[300px] object-cover">
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">Salted Caramel Éclair</h3>
@@ -125,7 +138,7 @@
       <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
         <p class="italic text-base">"The financier is pure magic—crispy outside, melt-in-your-mouth inside."</p>
         <div class="flex items-center mt-6 space-x-3">
-          <img src="customer1.jpg" class="w-10 h-10 rounded-full object-cover">
+          <img src="gambar6.jpg" class="w-10 h-10 rounded-full object-cover">
           <div>
             <p class="text-sm font-semibold">Sarah L.</p>
             <p class="text-xs text-gray-500">Pastry Lover</p>
@@ -135,7 +148,7 @@
       <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
         <p class="italic text-base">"I've never tasted a better éclair. The caramel is divine!"</p>
         <div class="flex items-center mt-6 space-x-3">
-          <img src="customer2.jpg" class="w-10 h-10 rounded-full object-cover">
+          <img src="gambar6.jpg" class="w-10 h-10 rounded-full object-cover">
           <div>
             <p class="text-sm font-semibold">James P.</p>
             <p class="text-xs text-gray-500">Food Blogger</p>
@@ -145,7 +158,7 @@
       <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
         <p class="italic text-base">"Like biting into a Parisian patisserie. Worth every calorie."</p>
         <div class="flex items-center mt-6 space-x-3">
-          <img src="customer3.jpg" class="w-10 h-10 rounded-full object-cover">
+          <img src="gambar6.jpg" class="w-10 h-10 rounded-full object-cover">
           <div>
             <p class="text-sm font-semibold">Amelia W.</p>
             <p class="text-xs text-gray-500">Gourmet Enthusiast</p>
@@ -156,19 +169,39 @@
   </section>
 
   <!-- Footer -->
-  <footer class="px-6 md:px-16 py-12 bg-black text-gray-300">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-      <div>
-        <p class="font-semibold text-white text-lg">Nusantara Pastry</p>
-        <p class="text-sm mt-1">© 2025 All Rights Reserved.</p>
-      </div>
-      <div class="flex space-x-4 text-xl">
-        <a href="#"><span>🌐</span></a>
-        <a href="#"><span>📧</span></a>
-        <a href="#"><span>📞</span></a>
-      </div>
+<footer class="px-6 md:px-16 py-12 bg-black text-gray-300">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+    <div>
+      <p class="font-semibold text-white text-lg">Nusantara Pastry</p>
+      <p class="text-sm mt-1">© 2025 All Rights Reserved.</p>
     </div>
-  </footer>
+    <div class="flex space-x-6 text-xl">
+      <!-- Instagram -->
+      <a href="https://instagram.com/nusantarapastry" target="_blank" class="hover:text-[#c7a76c] transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+        </svg>
+      </a>
+      <!-- Email -->
+      <a href="mailto:hello@nusantarapastry.com" class="hover:text-[#c7a76c] transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16v16H4z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </a>
+      <!-- WhatsApp -->
+<a href="https://wa.me/6281234567890" target="_blank" class="hover:text-[#c7a76c] transition">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.768.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.1 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.29.173-1.412-.074-.123-.272-.198-.57-.347z"/>
+    <path d="M20.52 3.48A11.91 11.91 0 0 0 12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.17 1.6 5.974L0 24l6.222-1.6A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12 0-3.19-1.243-6.19-3.48-8.52zM12 22.08c-1.94 0-3.84-.52-5.52-1.507l-.394-.233-3.69.95.985-3.6-.256-.37C2.926 15.376 2.4 13.71 2.4 12c0-5.3 4.3-9.6 9.6-9.6 2.56 0 4.97 1 6.77 2.8 1.8 1.8 2.8 4.21 2.8 6.8 0 5.3-4.3 9.6-9.6 9.6z"/>
+  </svg>
+</a>
+    </div>
+  </div>
+</footer>
+
 
   <!-- Mobile menu toggle -->
   <script>
@@ -201,8 +234,9 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
-      duration: 800,
-      once: true
+      duration: 900,
+      once: true,
+      easing: 'ease-out-quart'
     });
   </script>
 </body>
