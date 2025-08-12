@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover the story of Nusantara Pastry — where French pastry techniques meet the rich flavors of Indonesia. Handcrafted, fresh daily, and made with love.">
+  <title>About Us - Nusantara Pastry</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Lato', sans-serif; overflow-x: hidden; }
+    .heading { font-family: 'Playfair Display', serif; }
+    .gold-text { color: #caa867; }
+    .gold-bg { background-color: #caa867; }
+    .gold-bg:hover { background-color: #b8955c; }
+    .parallax {
+      background-image: url('gambar1.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-white text-black pt-24">
+
+<!-- Navbar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 md:px-16 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 flex-shrink-0" aria-label="Nusantara Pastry Home">
+      <span class="text-lg md:text-2xl font-bold heading gold-text">Nusantara Pastry</span>
+    </a>
+    <nav class="hidden md:flex items-center space-x-6 text-base">
+      <a href="index.html" class="text-gray-700 hover:text-[#caa867] transition">Home</a>
+      <a href="https://yourmarketplace.link" target="_blank" rel="noopener noreferrer"
+         class="gold-bg text-white px-4 py-2 rounded-full transition">Order Now</a>
+    </nav>
+    <div class="md:hidden">
+      <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu"
+              class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#caa867]">
+        <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 hidden transition-all duration-300 ease-in-out" aria-hidden="true">
+    <div class="px-6 py-4 space-y-3">
+      <a href="index.html" class="block text-gray-700">Home</a>
+      <a href="https://yourmarketplace.link" target="_blank" rel="noopener noreferrer"
+         class="block gold-bg text-white px-4 py-2 rounded-full text-center">Order Now</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="relative flex items-center justify-center text-center px-6 md:px-16 py-32 parallax">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <div class="relative z-10 max-w-3xl" data-aos="fade-up">
+    <h1 class="text-4xl md:text-6xl font-bold heading text-white">About <span class="gold-text">Us</span></h1>
+    <p class="text-gray-200 mt-4 text-lg">Our story, passion, and the people behind the pastries.</p>
+  </div>
+</section>
+
+<!-- Our Story -->
+<section class="px-6 md:px-16 py-20 grid md:grid-cols-2 gap-12 items-center">
+  <div data-aos="fade-right">
+    <h2 class="text-3xl font-bold mb-6 heading gold-text">Our Story</h2>
+    <p class="text-gray-700 leading-relaxed">
+      Founded in 2020, Nusantara Pastry was born from a love for artisanal baking and the desire to share it with the world.
+      Combining French pastry techniques with the rich flavors of Indonesia, we create sweets that not only please the taste buds but also tell a story.
+    </p>
+    <p class="mt-4 text-gray-700 leading-relaxed">
+      Every pastry we make is a work of art — handcrafted, baked fresh daily, and served with love.
+    </p>
+  </div>
+  <div data-aos="fade-left" class="flex justify-center">
+    <img src="gambar5.jpg" alt="Our kitchen at Nusantara Pastry" loading="lazy" class="w-full max-w-md rounded-xl shadow-lg object-cover">
+  </div>
+</section>
+
+<!-- Moments in Our Kitchen -->
+<section class="px-6 md:px-16 py-20 bg-gray-50">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold mb-4 heading gold-text">Moments in Our Kitchen</h2>
+    <p class="text-gray-700 max-w-xl mx-auto">
+      Behind every pastry, there’s a story of passion, precision, and love for the craft.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- 6 identical gambar7.jpg with descriptive alt -->
+    <template id="kitchen-template">
+      <div class="overflow-hidden rounded-xl shadow-lg">
+        <img src="gambar7.jpg" alt="Pastry making moment in Nusantara Pastry kitchen" loading="lazy"
+             class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+    </template>
+    <script>
+      for (let i = 0; i < 6; i++) {
+        document.write(document.getElementById('kitchen-template').innerHTML);
+      }
+    </script>
+  </div>
+</section>
+
+<!-- Meet the Team -->
+<section class="px-6 md:px-16 py-20">
+  <h2 class="text-3xl font-bold mb-12 heading text-center gold-text" data-aos="fade-up">Meet Our Team</h2>
+  <div class="grid md:grid-cols-3 gap-12 text-center">
+    <div data-aos="fade-up" data-aos-delay="100">
+      <img src="gambar6.jpg" alt="Ayu Putri - Head Pastry Chef" loading="lazy" class="w-3/4 max-w-[160px] aspect-square rounded-full mx-auto object-cover shadow-lg mb-4">
+      <h3 class="heading font-semibold text-lg">Ayu Putri</h3>
+      <p class="text-gray-500 text-sm">Head Pastry Chef</p>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="200">
+      <img src="gambar6.jpg" alt="Rizky Saputra - Sous Chef" loading="lazy" class="w-3/4 max-w-[160px] aspect-square rounded-full mx-auto object-cover shadow-lg mb-4">
+      <h3 class="heading font-semibold text-lg">Rizky Saputra</h3>
+      <p class="text-gray-500 text-sm">Sous Chef</p>
+    </div>
+    <div data-aos="fade-up" data-aos-delay="300">
+      <img src="gambar6.jpg" alt="Sinta Maharani - Creative Director" loading="lazy" class="w-3/4 max-w-[160px] aspect-square rounded-full mx-auto object-cover shadow-lg mb-4">
+      <h3 class="heading font-semibold text-lg">Sinta Maharani</h3>
+      <p class="text-gray-500 text-sm">Creative Director</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="px-6 md:px-16 py-12 bg-black text-gray-300">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+    <div>
+      <p class="heading font-semibold text-white text-lg">Nusantara Pastry</p>
+      <p class="text-sm mt-1">© 2025 All Rights Reserved.</p>
+    </div>
+    <div class="flex space-x-6 text-xl">
+      <a href="https://instagram.com/nusantarapastry" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="transition-colors duration-300 hover:text-[#caa867]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+        </svg>
+      </a>
+      <a href="mailto:hello@nusantarapastry.com" aria-label="Email" class="transition-colors duration-300 hover:text-[#caa867]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16v16H4z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </a>
+      <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="transition-colors duration-300 hover:text-[#caa867]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+          <path d="M12.04 2.003c-5.522 0-10.002 4.48-10.002 10.002 0 1.766.464 3.48 1.347 4.993L2 22l5.145-1.352a9.96 9.96 0 0 0 4.895 1.258h.005c5.522 0 10.002-4.48 10.002-10.002s-4.48-10.002-10.002-10.002zm0 18.177h-.004a8.17 8.17 0 0 1-4.164-1.138l-.298-.177-3.056.803.816-2.984-.194-.307a8.162 8.162 0 0 1-1.258-4.38c0-4.513 3.671-8.183 8.183-8.183 2.187 0 4.245.853 5.794 2.401a8.14 8.14 0 0 1 2.389 5.787c0 4.513-3.67 8.183-8.184 8.183zm4.49-6.127c-.245-.122-1.447-.713-1.67-.794-.223-.081-.387-.122-.55.123-.163.244-.631.794-.774.957-.143.162-.285.183-.53.061-.245-.122-1.034-.381-1.97-1.21-.727-.648-1.218-1.448-1.362-1.693-.143-.244-.015-.376.108-.498.111-.11.245-.285.367-.428.122-.143.163-.244.245-.407.081-.162.04-.305-.02-.427-.061-.122-.55-1.325-.754-1.814-.2-.48-.403-.415-.55-.423l-.47-.008c-.162 0-.428.061-.652.305s-.856.837-.856 2.04.876 2.366.998 2.529c.122.162 1.722 2.627 4.172 3.683.584.252 1.04.403 1.395.515.586.187 1.12.161 1.541.098.47-.07 1.447-.59 1.651-1.158.204-.57.204-1.058.143-1.158-.061-.101-.224-.162-.469-.284z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile Menu Script -->
+<script>
+  const btn = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  btn.addEventListener('click', () => {
+    const isHidden = menu.classList.contains('hidden');
+    menu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden', !isHidden);
+    iconClose.classList.toggle('hidden', isHidden);
+  });
+</script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 900,
+    once: true,
+    easing: 'ease-out-quart'
+  });
+</script>
+
+</body>
+</html>
